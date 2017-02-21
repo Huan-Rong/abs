@@ -1,0 +1,17 @@
+## Idea
+.idea/
+*.iml
+
+## Maven
+## src/test/
+target/
+out/
+
+## Project
+log/
+*.class
+
+## Others
+bash.exe.stackdump
+*.[oa]
+## pom.xml
