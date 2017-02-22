@@ -6,12 +6,12 @@
             http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd">
-
+    <!-- 启用 Spring 的扫描机制 -->
     <context:component-scan base-package="top.ian.controller"/>
 
-    <!-- /abs/WEB-INF/jsp/customer_input: 404 -->
-    <!--<bean name="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
-        <!--<property name="prefix" value="/WEB-INF/jsp"/>-->
-        <!--<property name="suffix" value=".jsp"/>-->
-    <!--</bean>-->
+    <bean name="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 注意：若 prefix 的值表示目录，那么该值的最后一个字符必须是斜杠。 -->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
 </beans>

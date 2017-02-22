@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import top.ian.domain.Product;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,13 +23,13 @@ public class ProductController {
     private static final Logger logger =
             LoggerFactory.getLogger(ProductController.class);
 
-    @RequestMapping(value = "/product_input")
+    @RequestMapping(value = "/product_input", method = RequestMethod.GET)
     public String inputProduct() {
         logger.info("inputProduct called.");
-        return "/WEB-INF/jsp/ProductForm.jsp";
+        return "ProductForm";
     }
 
-    @RequestMapping(value = "/product_save")
+    @RequestMapping(value = "/product_save", method = RequestMethod.POST)
     public String saveProduct(HttpServletRequest request, Model model) {
         logger.info("saveProduct called.");
         Product product = new Product();
@@ -42,7 +43,6 @@ public class ProductController {
 
         // add product
         model.addAttribute("product", product);
-        return "/WEB-INF/jsp/ProductDetails.jsp";
-
+        return "ProductDetails";
     }
 }
