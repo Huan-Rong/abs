@@ -9,8 +9,8 @@
 </head>
 <body>
     <form action="product_save" method="post">
-        <input type="text" name="productName"/>
-        <input type="text" name="productPrice"/>
+        产品名称：<input type="text" name="productName"/><br/>
+        产品价格：<input type="text" name="productPrice"/><br/>
         <input type="submit" value="Submit"/>
     </form>
 </body>
